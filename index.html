@@ -13,42 +13,49 @@
       <div class="jumbotron">
         <h1>Pacifico Pizzaria</h1>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Size</h3>
-            </div>
-            <div class="panel-body">
-              <select id="size">
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-                <option value="x-large">Extra Large</option>
-              </select>
+      <form id="order">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Size</h3>
+                </div>
+                <div class="panel-body">
+                  <select id="size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="x-large">Extra Large</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-             <div class="panel panel-default">
-               <div class="panel-heading">
-                 <h3 class="panel-title">Toppings</h3>
-               </div>
-               <div class="panel-body">
-                 <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
-                 <input type="checkbox" name="toppings" value="onion">Onion<br>
-                 <input type="checkbox" name="toppings" value="olive">Olives<br>
-                 <input type="checkbox" name="toppings" value="mushroom">Mushrooms<br>
-                 <input type="checkbox" name="toppings" value="pepper">Peppers<br>
-                 <input type="checkbox" name="toppings" value="bacon">Bacon<br>
-                 <input type="checkbox" name="toppings" value="sausage">Sausage<br>
-                 <input type="checkbox" name="toppings" value="tomato">Tomato<br>
+          <div class="col-md-6">
+            <div class="form-group">
+               <div class="panel panel-default">
+                 <div class="panel-heading">
+                   <h3 class="panel-title">Toppings</h3>
+                 </div>
+                 <div class="panel-body" id="toppings">
+                   <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
+                   <input type="checkbox" name="toppings" value="onion">Onion<br>
+                   <input type="checkbox" name="toppings" value="olive">Olives<br>
+                   <input type="checkbox" name="toppings" value="mushroom">Mushrooms<br>
+                   <input type="checkbox" name="toppings" value="pepper">Peppers<br>
+                   <input type="checkbox" name="toppings" value="bacon">Bacon<br>
+                   <input type="checkbox" name="toppings" value="sausage">Sausage<br>
+                   <input type="checkbox" name="toppings" value="tomato">Tomato<br>
+                 </div>
                </div>
              </div>
-           </div>
+          </div>
         </div>
-      </div>
+        <div class="submitButton">
+         <button type="submit" class="btn btn-lg">Order Now</button>
+       </div>
+      </form>
       <div class="row">
         <div class="col-md-12">
           <div class="panel panel-default">
@@ -58,7 +65,7 @@
             <div class="panel-body">
               <h4>You ordered a <span id="pizza-size"></span> pizza with <span id="pizza-toppings"></span></h4>
               <br><br>
-              <h5>Your Total</h5>
+              <h5>Your total will be</h5>
               <div class="well well-lg" id="pizza-price">
               </div>
             </div>
