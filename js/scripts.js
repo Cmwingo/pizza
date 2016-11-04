@@ -16,12 +16,16 @@ $(document).ready(function(){
 
     var toppings = [];
     var size;
+    var price = 0.00;
 
     size = $("#size").val();
     toppings = getCheckboxInput("toppings");
     $("#pizza-size").text(size);
     $("#pizza-toppings").text(toppings);
     yourPizza = new Pizza(size, toppings);
+    price = yourPizza.cost();
+    $("#pizza-price").text(price.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
+    console.log(price);
     console.log(size);
     console.log(toppings);
   });
@@ -35,5 +39,22 @@ function Pizza(size, toppings) {
 }
 
 Pizza.prototype.cost = function() {
-  
-}
+  var sizePriceMod = [3.00, 6.00, 10.00];
+  var toppingPrice = 0.89;
+  var basePrice = 8.00;
+  var price = 0.00;
+
+  if(this.diameter === "small") {
+    price = basePrice + (this.toppings.length * toppingPrice);
+    return price;
+  } else if(this.diameter === "medium") {
+    price = sizePriceMod[0] + basePrice + (this.toppings.length * toppingPrice);
+    return price;
+  } else if(this.diameter === "large") {
+    price = sizePriceMod[1] + basePrice + (this.toppings.length * toppingPrice);
+    return price;
+  } else {
+    price = sizePriceMod[2] + basePrice + (this.toppings.length * toppingPrice);
+    return price;
+  }
+};
