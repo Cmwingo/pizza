@@ -2,6 +2,7 @@
 <html>
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Italianno" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/scripts.js"></script>
@@ -11,12 +12,13 @@
   <body>
     <div class="container">
       <div class="jumbotron">
+        <img src="img/pizza-man-trans.png" alt="A man tossing pizza dough" />
         <h1>Pacifico Pizzaria</h1>
       </div>
       <form id="order">
         <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
+          <div class="col-lg-6">
+            <div class="form-group form-group-lg">
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h3 class="panel-title">Size</h3>
@@ -32,7 +34,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-lg-6">
             <div class="form-group">
                <div class="panel panel-default">
                  <div class="panel-heading">
@@ -53,19 +55,19 @@
           </div>
         </div>
         <div class="submitButton">
-         <button type="submit" class="btn btn-lg">Order Now</button>
+         <button type="submit" class="btn btn-lg btn-success">Order Now</button>
        </div>
       </form>
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" id="order-results">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Your Pizza</h3>
             </div>
             <div class="panel-body">
-              <h4>You ordered a <span id="pizza-size"></span> pizza with <span id="pizza-toppings"></span></h4>
+              <h2>You ordered a <span id="pizza-size"></span> pizza with <span id="pizza-toppings"></span></h2>
               <br><br>
-              <h5>Your total will be</h5>
+              <h3>Your total will be</h3>
               <div class="well well-lg" id="pizza-price">
               </div>
             </div>

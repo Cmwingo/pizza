@@ -3,10 +3,56 @@
   margin-bottom: 5%;
 }
 
+.jumbotron {
+  background-image: url("../img/table-cloth.jpg");
+  background-size: cover;
+  color: green;
+  text-shadow: 3px 3px black;
+  text-align: center;
+}
+
+.jumbotron h1 {
+  font-size: 900%;
+  font-family: 'Italianno', cursive;
+}
+
+.jumbotron img {
+  float: left;
+  width: 15%;
+}
+.panel-title {
+  font-weight: bold;
+}
 input {
   padding: 30px;
 }
 
 #toppings input {
   margin-right: 2%;
+}
+
+#order-results {
+  display: none;
+}
+
+body {
+  background-color: darkgreen;
+}
+
+.panel {
+  background-color: rgba(255,255,255,0.4);
+}
+
+.panel-default > .panel-heading {
+  background-color: rgba(255,255,255,0.4);
+}
+
+#pizza-price {
+  font-size: 200%;
+  font-weight: bold;
+}
+
+#size {
+  width: 100%;
+  font-size: 14pt;
 }

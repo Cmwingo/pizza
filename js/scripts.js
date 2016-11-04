@@ -25,6 +25,7 @@ $(document).ready(function(){
     yourPizza = new Pizza(size, toppings);
     price = yourPizza.cost();
     $("#pizza-price").text(price.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
+    $("#order-results").slideDown();
     console.log(price);
     console.log(size);
     console.log(toppings);
