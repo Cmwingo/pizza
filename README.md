@@ -18,6 +18,10 @@ _This program will take a pizza order from the user including size and toppings.
 * _It will display the price of the pizza you order_
   * _Example Input: "Extra large pepperoni"_
   * _Example Output: "Your cost will be $15.00"_
+* _It will take orders for multiple pizzas and return a total cost for the order_
+  * _Example Input: "Extra large pepperoni and a medium mushroom"_
+  * _Example Output: "Your total for the two pizzas will be $24.00"_
+
 
 ## Setup/Installation Requirements
 

@@ -20,22 +20,25 @@ $(document).ready(function(){
   $("form#order").submit(function(event){
     alert("submisson");
     event.preventDefault();
-    console.log(clickCount);
+    var total = 0.00;
 
     for(i = 0; i < clickCount; i++) {
       size = $("#size" + i).val();
-      console.log("Size" + size);
       toppings = getCheckboxInput("toppings" + i);
       yourPizza = new Pizza(size, toppings);
       yourPizza.price = yourPizza.cost();
-      console.log(yourPizza);
       pizzas[i+1] = yourPizza;
-      console.log("Pizza" + i + pizzas[i]);
     }
-    $("#pizza-size").text(size);
-    $("#pizza-toppings").text(toppings);
-    price = yourPizza.cost();
-    $("#pizza-price").text(price.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
+    for(i = 0; i < pizzas.length; i++) {
+      alert("appending");
+      $("#reciept").prepend(
+        '<h2>Thank you for your order of a <span id="pizza-size' + i + '"> \
+        </span> pizza with <span id="pizza-toppings' + i + '"></span>.</h2>');
+      $("#pizza-size" + i).text(pizzas[i].diameter);
+      $("#pizza-toppings" + i).text(pizzas[i].toppings);
+      total += pizzas[i].price;
+    }
+    $("#pizza-price").text(total.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
     $("#order-results").slideDown();
   });
 
