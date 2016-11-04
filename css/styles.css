@@ -57,3 +57,7 @@ body {
   width: 100%;
   font-size: 14pt;
 }
+
+.well {
+  width: 35%;
+}

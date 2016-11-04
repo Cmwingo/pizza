@@ -18,7 +18,6 @@ $(document).ready(function(){
   };
 
   $("form#order").submit(function(event){
-    alert("submisson");
     event.preventDefault();
     var total = 0.00;
 
@@ -29,8 +28,17 @@ $(document).ready(function(){
       yourPizza.price = yourPizza.cost();
       pizzas[i+1] = yourPizza;
     }
+
+    if(clickCount === 0){
+      var i = 0;
+      size = $("#size").val();
+      toppings = getCheckboxInput("toppings");
+      var pizza = new Pizza(size, toppings);
+      pizza.price = pizza.cost(size, toppings);
+      pizzas[i] = pizza;
+    }
+
     for(i = 0; i < pizzas.length; i++) {
-      alert("appending");
       $("#reciept").prepend(
         '<h2>Thank you for your order of a <span id="pizza-size' + i + '"> \
         </span> pizza with <span id="pizza-toppings' + i + '"></span>.</h2>');
