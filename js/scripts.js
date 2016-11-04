@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
   var pizzas = [];
-  var clickCount = -1;
+  var clickCount = 0;
   var toppings = [];
   var size;
 
@@ -20,34 +20,31 @@ $(document).ready(function(){
   $("form#order").submit(function(event){
     alert("submisson");
     event.preventDefault();
+    console.log(clickCount);
 
     for(i = 0; i < clickCount; i++) {
-      size = $("#size" + clickCount).val();
-      toppings = getCheckboxInput("toppings" + clickCount + "");
+      size = $("#size" + i).val();
+      console.log("Size" + size);
+      toppings = getCheckboxInput("toppings" + i);
       yourPizza = new Pizza(size, toppings);
-      pizzas[i] = yourPizza;
+      yourPizza.price = yourPizza.cost();
+      console.log(yourPizza);
+      pizzas[i+1] = yourPizza;
+      console.log("Pizza" + i + pizzas[i]);
     }
     $("#pizza-size").text(size);
     $("#pizza-toppings").text(toppings);
     price = yourPizza.cost();
     $("#pizza-price").text(price.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
     $("#order-results").slideDown();
-    console.log(price);
-    console.log(size);
-    console.log(toppings);
   });
 
   $("#add-pizza").click(function(){
-    clickCount ++;
     size = $("#size").val();
     toppings = getCheckboxInput("toppings");
     var pizza = new Pizza(size, toppings);
     pizza.price = pizza.cost(size, toppings);
     pizzas[clickCount] = pizza;
-    console.log(pizza);
-    console.log(size);
-    console.log(toppings);
-    console.log(pizza.price);
     $("#order").prepend(
             '<div class="row" id="order"> \
               <div class="col-lg-6"> \
@@ -59,6 +56,7 @@ $(document).ready(function(){
                     <div class="panel-body"> \
                       <select id="size' + clickCount + '"> \
                         <option value="small">Small</option> \
+                        <option value="medium">Medium</option> \
                         <option value="large">Large</option> \
                         <option value="x-large">Extra Large</option> \
                       </select> \
@@ -86,6 +84,7 @@ $(document).ready(function(){
                  </div> \
               </div> \
             </div>');
+    clickCount ++;
   });
 });
 
