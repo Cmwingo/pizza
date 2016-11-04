@@ -23,12 +23,13 @@
 .panel-title {
   font-weight: bold;
 }
-input {
-  padding: 30px;
-}
 
 #toppings input {
   margin-right: 2%;
+}
+
+#toppings {
+  font-weight: bold;
 }
 
 #order-results {
